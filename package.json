@@ -1,0 +1,11 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My personal portfolio website",
+  "scripts": {
+    "start": "live-server"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
+}

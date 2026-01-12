@@ -1,0 +1,125 @@
+<!-- ================= ACHIEVEMENTS SECTION ================= -->
+<section id="achievements">
+  <div class="container">
+    <h2 class="achieve-title">Achievements</h2>
+
+    <div class="timeline">
+
+      <div class="achieve-box left">
+        <div class="content">
+          <h4>Online Courses</h4>
+          <p>Successfully completed multiple online courses to improve technical skills.</p>
+        </div>
+      </div>
+
+      <div class="achieve-box right">
+        <div class="content">
+          <h4>Full Stack Internship</h4>
+          <p>Completed Full Stack Developer Internship using MERN Stack & Spring Boot.</p>
+        </div>
+      </div>
+
+      <div class="achieve-box left">
+        <div class="content">
+          <h4>IoT Certification</h4>
+          <p>Certified in Internet of Things (IoT) from Springboard.</p>
+        </div>
+      </div>
+
+      <div class="achieve-box right">
+        <div class="content">
+          <h4>Linear Algebra using R</h4>
+          <p>Completed Introduction to Linear Algebra using R certification.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+#achievements{
+  padding:80px 0;
+  background: linear-gradient(135deg,#0d0d0d,#1a1a1a);
+}
+
+.achieve-title{
+  text-align:center;
+  font-size:40px;
+  color:#ff00ff;
+  margin-bottom:50px;
+}
+
+/* Timeline container */
+.timeline{
+  max-width:1000px;
+  margin:auto;
+}
+
+/* Box */
+.achieve-box{
+  width:50%;
+  padding:10px 25px;
+  opacity:0;
+}
+
+/* Content */
+.achieve-box .content{
+  background:rgba(255,255,255,0.07);
+  padding:25px;
+  border-radius:14px;
+  border:1px solid rgba(255,0,255,0.4);
+}
+
+.achieve-box h4{
+  color:#ff00ff;
+  margin-bottom:8px;
+}
+
+.achieve-box p{
+  color:white;
+  font-size:14.5px;
+  line-height:1.5;
+}
+
+/* Left & Right (closer) */
+.left{
+  transform:translateX(-40px);
+  animation:slideLeft 0.8s forwards;
+}
+
+.right{
+  margin-left:auto;
+  transform:translateX(40px);
+  animation:slideRight 0.8s forwards;
+}
+
+/* Animations */
+@keyframes slideLeft{
+  to{opacity:1;transform:translateX(0);}
+}
+@keyframes slideRight{
+  to{opacity:1;transform:translateX(0);}
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .achieve-box{
+    width:100%;
+    margin-bottom:20px;
+  }
+  .left,.right{
+    transform:translateY(30px);
+    animation:slideUp 0.8s forwards;
+  }
+  @keyframes slideUp{
+    to{opacity:1;transform:translateY(0);}
+  }
+}
+</style>
+
+<script>
+document.querySelectorAll('.achieve-box').forEach((box,i)=>{
+  box.style.animationDelay = `${i*0.25}s`;
+});
+</script>

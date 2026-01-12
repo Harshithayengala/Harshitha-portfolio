@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Projects - Harshitha</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Roboto', sans-serif;
+  background: linear-gradient(135deg,#0d0d0d,#1a1a1a);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* Navbar */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+}
+
+/* Projects Section */
+.projects-section{
+  min-height:100vh;
+  padding:100px 50px 50px 50px;
+}
+
+/* Cards */
+.project-card{
+  background: rgba(255,255,255,0.05);
+  border-radius:20px;
+  padding:30px;
+  margin-bottom:30px;
+  backdrop-filter:blur(10px);
+  opacity:0;
+  transform: translateY(50px) scale(0.9);
+  animation: popUp 0.8s forwards;
+}
+.project-card h3{
+  color:#ff00ff;
+  margin-bottom:15px;
+}
+.project-card p{
+  color:white;
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* Pop-up animation */
+@keyframes popUp{
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+         <li class="nav-item"><a class="nav-link" href="technicalskills.html">Technical Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Projects Section -->
+<div class="projects-section container">
+
+  <div class="row g-4">
+
+    <div class="col-md-6">
+      <div class="project-card" style="animation-delay:0.2s;">
+        <h3>Travel Journal Application</h3>
+        <p>
+          Developed a Travel Journal Web Application allowing users to record, organize, 
+          and manage travel experiences with locations, dates, and images.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="project-card" style="animation-delay:0.4s;">
+        <h3>Full Stack Web Application</h3>
+        <p>
+          Developed a Full Stack Web Application as part of Edunet program. 
+          Worked on frontend & backend development and handled basic database operations.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="project-card" style="animation-delay:0.6s;">
+        <h3>IOT Sensors-Based Robot</h3>
+        <p>
+          Designed an automated robotics system using microcontrollers and sensors to perform 
+          real-time actions, demonstrating skills in embedded systems and automation.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="project-card" style="animation-delay:0.8s;">
+        <h3>Food Delivery App</h3>
+        <p>
+          Developed a web & mobile platform for users to order food online from nearby restaurants 
+          with real-time tracking and secure payments.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JS to stagger animation -->
+<script>
+const cards = document.querySelectorAll('.project-card');
+cards.forEach((card, index)=>{
+  card.style.animationDelay = `${0.2 + index*0.2}s`;
+});
+</script>
+
+</body>
+</html>

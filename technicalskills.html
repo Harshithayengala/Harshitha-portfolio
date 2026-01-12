@@ -1,0 +1,105 @@
+<!-- ================= TECHNICAL SKILLS SECTION ================= -->
+<section id="technical-skills">
+  <div class="container">
+    <h2 class="skills-title">Technical Skills</h2>
+
+    <div class="skills-container">
+      <div class="skill-circle">
+        <h4>Programming</h4>
+        <p>Python, C, JavaScript</p>
+      </div>
+
+      <div class="skill-circle">
+        <h4>Web Development</h4>
+        <p>HTML, CSS, Bootstrap</p>
+      </div>
+
+      <div class="skill-circle">
+        <h4>Frameworks</h4>
+        <p>MERN, Spring Boot</p>
+      </div>
+
+      <div class="skill-circle">
+        <h4>Databases</h4>
+        <p>MySQL, MongoDB</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CSS ================= -->
+<style>
+/* SECTION FIX */
+#technical-skills {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 0;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  overflow: visible;
+}
+
+/* TITLE */
+.skills-title {
+  text-align: center;
+  font-size: 42px;
+  color: #ff00ff;
+  margin-bottom: 70px;
+  font-weight: bold;
+}
+
+/* CONTAINER */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* SKILL CIRCLE */
+.skill-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 0, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+
+  opacity: 0;
+  transform: translateY(60px);
+  animation: popUp 0.8s ease forwards;
+}
+
+/* TEXT */
+.skill-circle h4 {
+  color: #ff00ff;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.skill-circle p {
+  font-size: 15px;
+  padding: 0 18px;
+}
+
+/* ANIMATION */
+@keyframes popUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+<!-- ================= JS ================= -->
+<script>
+  const circles = document.querySelectorAll('.skill-circle');
+  circles.forEach((circle, index) => {
+    circle.style.animationDelay = `${index * 0.2}s`;
+  });
+</script>

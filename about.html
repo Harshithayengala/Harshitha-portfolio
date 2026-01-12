@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Me - Harshitha</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin:0;
+  font-family:'Roboto', sans-serif;
+  background: linear-gradient(135deg,#0d0d0d,#1a1a1a);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* About Section */
+.about-wrapper{
+  display:flex;
+  flex-wrap:wrap;
+  min-height:90vh;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
+  padding:50px;
+}
+
+/* LEFT PANEL */
+.about-left{
+  flex:1;
+  min-width:300px;
+  animation: slideLeft 1s ease forwards;
+  opacity:0;
+}
+.about-left h1{
+  font-size:48px;
+  color:#ff00ff;
+  margin-bottom:20px;
+}
+.about-left p{
+  color:#ffffff;
+  font-size:18px;
+  line-height:1.7;
+}
+
+/* RIGHT PANEL */
+.about-right{
+  flex:1;
+  min-width:300px;
+  background: rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter: blur(10px);
+  animation: slideRight 1s ease forwards 0.3s;
+  opacity:0;
+}
+.about-right h3{
+  color:#ff00ff;
+  margin-bottom:15px;
+}
+.about-right ul{
+  list-style:none;
+  padding:0;
+}
+.about-right li{
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  color:white;
+}
+
+/* Animations */
+@keyframes slideLeft{
+  from{
+    opacity:0;
+    transform:translateX(-150px) scale(0.9);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0) scale(1);
+  }
+}
+@keyframes slideRight{
+  from{
+    opacity:0;
+    transform:translateX(150px) scale(0.9);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0) scale(1);
+  }
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .about-wrapper{
+    flex-direction:column;
+  }
+  .about-left, .about-right{
+    animation:none;
+    opacity:1;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Harshitha Portfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="projects.html">Projects</a></li>
+            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+            <li><a class="dropdown-item" href="technicalskills.html">Technical Skills</a></li>
+            <li><a class="dropdown-item" href="achievements.html">Achievements</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- About Section -->
+<div class="about-wrapper">
+
+  <!-- LEFT PANEL -->
+  <div class="about-left">
+    <h1>About Me</h1>
+    <p>
+      I am a Computer Science Engineering student specializing in Artificial Intelligence and 
+      Machine Learning. As a fresher, I am ready to start my career in software 
+      development, enhancing my coding skills, and working on real-world projects.
+    </p>
+    <p>
+      I enjoy problem-solving, learning new technologies, and building applications that create real impact.
+    </p>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="about-right">
+    <h3>Education</h3>
+    <ul>
+      <li>B.Tech – CSE (AI&ML)</li>
+      <li>Jayamukhi Institute of Technological Sciences</li>
+    </ul>
+
+    <h3 class="mt-4">Strengths</h3>
+    <ul>
+      <li>Quick Learner</li>
+      <li>Problem Solving</li>
+      <li>Team Collaboration</li>
+      <li>Creativity & Time Management</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
