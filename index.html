@@ -2,139 +2,153 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Harshitha Portfolio</title>
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  font-family:'Roboto', sans-serif;
+body {
+  font-family: 'Roboto', sans-serif;
   background: linear-gradient(135deg,#0d0d0d,#1a1a1a);
-  color:white;
-  overflow-x:hidden;
+  color: white;
+  overflow-x: hidden;
+  margin:0;
 }
 
 /* Navbar */
-.navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:1000;
+.navbar {
+  background-color: #111;
+  padding: 1rem 2rem;
+}
+.navbar-brand {
+  color: #ff00ff !important;
+  font-weight: bold;
+  font-size: 24px;
+}
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: 500;
+  margin-left: 1rem;
+  transition: color 0.3s;
+}
+.navbar-nav .nav-link:hover {
+  color: #ff00ff !important;
 }
 
-/* Profile Section */
-.profile-section{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  text-align:center;
-  margin-top:120px;
-  padding:20px;
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  flex-wrap: wrap;
+}
+.hero-text {
+  max-width: 50%;
+  animation: slideLeft 1s ease forwards;
+  opacity: 0;
+}
+.hero-text h1 {
+  font-size: 60px;
+  color: #ff00ff;
+  margin-bottom: 15px;
+}
+.hero-text h3 {
+  font-size: 28px;
+  color: #00ffff;
+  margin-bottom: 20px;
+}
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #fff;
 }
 
-/* Profile Image */
-.profile-section img{
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  object-fit:cover;
-  border:5px solid #ff00ff;
-  margin-bottom:20px;
-  transition:0.5s;
+/* Hero Image */
+.hero-img {
+  width: 420px;          
+  height: 520px;
+  border-radius: 50%;
+  border: 6px solid transparent; 
+  background-image: linear-gradient(135deg, #ff00ff, #00ffff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0 0 30px rgba(255,0,255,0.6); 
+  animation: slideRight 1s ease forwards;
+  opacity: 0;
+  transition: transform 0.5s, box-shadow 0.5s;
 }
-.profile-section img:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 30px #ff00ff;
-}
-
-/* Name */
-.profile-section h1{
-  font-size:50px;
-  color:#ff00ff;
-  margin:0;
+.hero-img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 50px rgba(255,0,255,0.9);
 }
 
-/* Subtitle */
-.profile-section .subtitle{
-  font-size:22px;
-  letter-spacing:3px;
-  color:#cccccc;
-  margin-bottom:20px;
+/* Animations */
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-/* Summary Card */
-.summary-card{
-  background: rgba(255,255,255,0.05);
-  padding:30px;
-  border-radius:20px;
-  backdrop-filter:blur(10px);
-  max-width:700px;
-  animation: fadeUp 1s ease forwards;
-  opacity:0;
+/* Button */
+.btn-custom {
+  background: #ff00ff;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: 0.3s;
 }
-.summary-card p{
-  color:white;
-  font-size:18px;
-  line-height:1.6;
-  margin:0;
-}
-
-/* Fade-up animation */
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform: translateY(50px);
-  }
-  to{
-    opacity:1;
-    transform: translateY(0);
-  }
+.btn-custom:hover {
+  background: #00ffff;
+  color: #111;
 }
 </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Harshitha Portfolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         <li class="nav-item"><a class="nav-link" href="technicalskills.html">Technical Skills</a></li>
         <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Profile Section -->
-<div class="profile-section">
-  <img src="profile pic.jpg" alt="profile">
-  <h1>Harshitha Yengala</h1>
-  <p class="subtitle">PORTFOLIO</p>
-
-  <!-- Summary Card -->
-  <div class="summary-card mt-3">
-    <p>
-      I am a passionate Computer Science Engineering student (Artificial Intelligence & Machine Learning), 
-      eager to start my career as a software developer. Skilled in programming, problem-solving, 
-      and ready to learn new technologies to build real-world applications.
-    </p>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-text">
+    <h1>Hello, I'm Harshitha</h1>
+    <h3>AI & ML Student | Web Developer</h3>
+    <p>I am a passionate Computer Science Engineering student eager to start my career as a software developer. Skilled in programming, problem-solving, and ready to learn new technologies to build real-world applications.</p>
+    <a href="projects.html" class="btn btn-custom">View Projects</a>
   </div>
-</div>
+  <img src="profile pic.jpg" alt="Harshitha Profile" class="hero-img">
+</section>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
